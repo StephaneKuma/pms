@@ -19,7 +19,7 @@ class CreateCustomerLedgersTable extends Migration
             $table->foreign('customer_id')
                 ->references('id')
                 ->on('customers')
-                ->onUpdate('casacde')
+                ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->string('balance');
             $table->string('paid');
