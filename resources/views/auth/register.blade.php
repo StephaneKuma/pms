@@ -66,7 +66,16 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-12">
+                <div class="col-8">
+                    <div class="icheck-primary">
+                        <input type="checkbox" id="manager" name="manager" value="agree">
+                        <label for="manager">
+                            {{ _('Register as a Manager') }}
+                        </label>
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-4">
                     <button type="submit" class="btn btn-primary btn-block">{{ _('Register') }}</button>
                 </div>
                 <!-- /.col -->
