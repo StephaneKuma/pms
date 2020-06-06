@@ -1,18 +1,11 @@
 @extends('layouts.salesman.app')
 
 @section('content')
-    <div class="row">
-        <div class="col-md-2">
-            <a href="{{ route('salesman.drugs.index') }}" class="btn btn-block btn-primary"><i class="fa fa-bars"></i> {{ _("Manage Drugs") }}</a>
-        </div>
-        <div class="col-md-10"></div>
-    </div>
-
-    <div class="row mt-2">
+<div class="row mt-2">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <form class="row" action="{{ route('salesman.drugs.store') }}" method="post" enctype="multipart/form-data">
+                    <form class="row" action="{{ route('salesman.drugs.update', $drug->id) }}" method="post" enctype="multipart/form-data">
                         @csrf
 
                         <div class="col-12">
@@ -34,7 +27,7 @@
                                     <div class="row">
                                         <label for="name" class="col-sm-3 col-form-label">{{ _('Drug Name') }}</label>
                                         <div class="col-sm-9">
-                                            <input name="name" value="{{ old('name') }}" required autofocus type="text" class="form-control" id="name" placeholder="{{ _('Drug Name') }}">
+                                            <input name="name" value="{{ $drug->name }}" required autofocus type="text" class="form-control" id="name" placeholder="{{ _('Drug Name') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -44,7 +37,7 @@
                                     <div class="row">
                                         <label for="inputEmail3" class="col-sm-3 col-form-label">{{ _('Generic Name') }}</label>
                                         <div class="col-sm-9">
-                                            <input name="generic_name" value="{{ old('generic_name') }}" required type="text" class="form-control" id="generic_name" placeholder="{{ _('Generic Name') }}">
+                                            <input name="generic_name" value="{{ $drug->generic_name }}" required type="text" class="form-control" id="generic_name" placeholder="{{ _('Generic Name') }}">
                                         </div>
                                     </div>
                                     </div>
@@ -52,7 +45,7 @@
                                     <div class="row">
                                         <label for="barcode" class="col-sm-3 col-form-label">{{ _('Barcode Number') }}</label>
                                         <div class="col-sm-9">
-                                            <input name="barcode" value="{{ old('barcode') }}" required type="number" class="form-control" id="barcode" placeholder="{{ _('Barcode Number') }}">
+                                            <input name="barcode" value="{{ $drug->barcode }}" required type="number" class="form-control" id="barcode" placeholder="{{ _('Barcode Number') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -62,7 +55,7 @@
                                     <div class="row">
                                         <label for="strength" class="col-sm-3 col-form-label">{{ _('Strength') }}</label>
                                         <div class="col-sm-9">
-                                            <input name="strength" value="{{ old('strength') }}" required type="text" class="form-control" id="strength" placeholder="{{ _('Strength') }}">
+                                            <input name="strength" value="{{ $drug->strength }}" required type="text" class="form-control" id="strength" placeholder="{{ _('Strength') }}">
                                         </div>
                                     </div>
                                     </div>
@@ -85,7 +78,7 @@
                                     <div class="row">
                                         <label for="trade_price" class="col-sm-3 col-form-label">{{ _('Trade Price') }}</label>
                                         <div class="col-sm-9">
-                                            <input name="trade_price" value="{{ old('trade_price') }}" required type="number" class="form-control" id="trade_price" placeholder="{{ _('Trade Price') }}">
+                                            <input name="trade_price" value="{{ $drug->trade_price }}" required type="number" class="form-control" id="trade_price" placeholder="{{ _('Trade Price') }}">
                                         </div>
                                     </div>
                                     </div>
@@ -93,7 +86,7 @@
                                     <div class="row">
                                         <label for="mrp" class="col-sm-3 col-form-label">{{ _('M.R.P.') }}</label>
                                         <div class="col-sm-9">
-                                            <input name="mrp" value="{{ old('mrp') }}" required type="number" class="form-control" id="mrp" placeholder="{{ _('M.R.P.') }}">
+                                            <input name="mrp" value="{{ $drug->mrp }}" required type="number" class="form-control" id="mrp" placeholder="{{ _('M.R.P.') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -103,7 +96,7 @@
                                     <div class="row">
                                         <label for="box_size" class="col-sm-3 col-form-label">{{ _('Box Size') }}</label>
                                         <div class="col-sm-9">
-                                            <input name="box_size" value="{{ old('box_size') }}" required type="number" class="form-control" id="box_size" placeholder="{{ _('Box Size') }}">
+                                            <input name="box_size" value="{{ $drug->box_size }}" required type="number" class="form-control" id="box_size" placeholder="{{ _('Box Size') }}">
                                         </div>
                                     </div>
                                     </div>
@@ -111,7 +104,7 @@
                                     <div class="row">
                                         <label for="box_price" class="col-sm-3 col-form-label">{{ _('Box Price') }}</label>
                                         <div class="col-sm-9">
-                                            <input name="box_price" value="{{ old('box_price') }}" required type="number" class="form-control" id="box_price" placeholder="{{ _('Box Price') }}">
+                                            <input name="box_price" value="{{ $drug->box_price }}" required type="number" class="form-control" id="box_price" placeholder="{{ _('Box Price') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +125,7 @@
                                     <div class="row">
                                         <label for="short_stock" class="col-sm-3 col-form-label">{{ _('Short Quantity') }}</label>
                                         <div class="col-sm-9">
-                                            <input name="short_stock" value="{{ old('short_stock') }}" required type="number" class="form-control" id="short_stock" placeholder="{{ _('Short Quantity') }}">
+                                            <input name="short_stock" value="{{ $drug->short_stock }}" required type="number" class="form-control" id="short_stock" placeholder="{{ _('Short Quantity') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -143,7 +136,7 @@
                                         <label class="col-sm-3 col-form-label">{{ _('Image') }}</label>
                                         <div class="col-sm-9">
                                             <div class="custom-file">
-                                                <input name="image" value="{{ old('image') }}" required type="file" class="custom-file-input" id="customFile">
+                                                <input name="image" value="{{ $drug->image }}" required type="file" class="custom-file-input" id="customFile">
                                                 <label class="custom-file-label" for="customFile">Choose file</label>
                                             </div>
                                         </div>
@@ -153,7 +146,7 @@
                                     <div class="row">
                                         <label for="side_effect" class="col-sm-3 col-form-label">{{ _('Side Effect') }}</label>
                                         <div class="col-sm-9">
-                                            <input name="side_effect" value="{{ old('side_effect') }}" required type="text" class="form-control" id="side_effect" placeholder="{{ _('Side Effect') }}">
+                                            <input name="side_effect" value="{{ $drug->side_effect }}" required type="text" class="form-control" id="side_effect" placeholder="{{ _('Side Effect') }}">
                                         </div>
                                     </div>
                                 </div>
@@ -164,7 +157,7 @@
                                         <div class="col-sm-3"></div>
                                         <div class="col-sm-9">
                                             <div class="custom-control custom-checkbox">
-                                                <input name="favourite" value="1" class="col-sm-1 custom-control-input" type="checkbox" id="favourite" value="{{ old('favourite') }}">
+                                                <input name="favourite" value="1" class="col-sm-1 custom-control-input" type="checkbox" id="favourite" value="{{ $drug->favourite }}">
                                                 <label for="favourite" class="col-sm-11 custom-control-label">Add To Favourite</label>
                                             </div>
                                         </div>

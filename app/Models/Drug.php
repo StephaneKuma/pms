@@ -10,6 +10,7 @@ class Drug extends Model
         'supplier_id',
         'name',
         'generic_name',
+        'barcode',
         'strength',
         'drug_form_id',
         'box_size',
@@ -32,7 +33,7 @@ class Drug extends Model
         return $this->belongsTo(Supplier::class);
     }
 
-    public function drug_form()
+    public function form()
     {
         return $this->belongsTo(DrugForm::class);
     }
