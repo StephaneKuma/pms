@@ -51,9 +51,9 @@ class User extends Authenticatable
         return $this->belongsTo(Role::class);
     }
 
-    public function hasRole() : string
+    public function hasRole()
     {
-        return $this->role()->name;
+        return $this->role->name;
     }
 
     public function purchases()

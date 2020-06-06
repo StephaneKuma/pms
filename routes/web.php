@@ -22,14 +22,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::group(['prefix' => 'salesman', 'namesapce' => 'Salesman', 'middleware' => ['auth', 'salesman'], 'as' => 'salesman.'], function () {
-
+Route::group(['prefix' => 'salesman', 'namespace' => 'Salesman', 'middleware' => ['auth', 'salesman'], 'as' => 'salesman.'], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('pos', 'PosController@index')->name('pos');
 });
 
-Route::group(['prefix' => 'manager', 'namesapce' => 'Manager', 'middleware' => ['auth', 'manager'], 'as' => 'manager.'], function () {
-
+Route::group(['prefix' => 'manager', 'namespace' => 'Manager', 'middleware' => ['auth', 'manager'], 'as' => 'manager.'], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
 
-Route::group(['prefix' => 'admin', 'namesapce' => 'Admin', 'middleware' => ['auth', 'admin'], 'as' => 'admin.'], function () {
-
+Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin'], 'as' => 'admin.'], function () {
+    Route::get('dashboard', 'DashboardController@index')->name('dashboard');
 });
