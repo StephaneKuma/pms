@@ -27,21 +27,21 @@ Route::group(['prefix' => 'salesman', 'namespace' => 'Salesman', 'middleware' =>
     Route::get('pos', 'PosController@index')->name('pos');
 
     // Drug Form
-    Route::get('drug/form/create', 'DrugFormController@create')->name('drugs.forms.create');
-    Route::post('drug/form/create', 'DrugFormController@store')->name('drugs.forms.store');
-    Route::get('drug/form/{id}', 'DrugFormController@show')->name('drugs.forms.show');
-    Route::get('drug/form/{id}/edit', 'DrugFormController@edit')->name('drugs.forms.edit');
-    Route::post('drug/form/{id}/edit', 'DrugFormController@update')->name('drugs.forms.update');
-    Route::delete('drug/form/{id}/delete', 'DrugFormController@update')->name('drugs.forms.destroy');
+    Route::get('drug/forms/create', 'DrugFormController@create')->name('drugs.forms.create');
+    Route::post('drug/forms/create', 'DrugFormController@store')->name('drugs.forms.store');
+    Route::get('drug/forms/{id}', 'DrugFormController@show')->name('drugs.forms.show');
+    Route::get('drug/forms/{id}/edit', 'DrugFormController@edit')->name('drugs.forms.edit');
+    Route::post('drug/forms/{id}/edit', 'DrugFormController@update')->name('drugs.forms.update');
+    Route::delete('drug/forms/{id}/delete', 'DrugFormController@update')->name('drugs.forms.destroy');
     Route::get('drug/forms', 'DrugFormController@index')->name('drugs.forms.index');
 
     // Drug
-    Route::get('drug/create', 'DrugController@create')->name('drugs.create');
-    Route::post('drug/create', 'DrugController@store')->name('drugs.store');
-    Route::get('drug/{id}', 'DrugController@show')->name('drugs.show');
-    Route::get('drug/{id}/edit', 'DrugController@edit')->name('drugs.edit');
-    Route::post('drug/{id}/edit', 'DrugController@update')->name('drugs.update');
-    Route::get('drug/{id}/delete', 'DrugController@destroy')->name('drugs.destroy');
+    Route::get('drugs/create', 'DrugController@create')->name('drugs.create');
+    Route::post('drugs/create', 'DrugController@store')->name('drugs.store');
+    Route::get('drugs/{id}', 'DrugController@show')->name('drugs.show');
+    Route::get('drugs/{id}/edit', 'DrugController@edit')->name('drugs.edit');
+    Route::post('drugs/{id}/edit', 'DrugController@update')->name('drugs.update');
+    Route::get('drugs/{id}/delete', 'DrugController@destroy')->name('drugs.destroy');
     Route::get('drugs', 'DrugController@index')->name('drugs.index');
 });
 
