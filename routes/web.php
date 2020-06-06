@@ -25,6 +25,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::group(['prefix' => 'salesman', 'namespace' => 'Salesman', 'middleware' => ['auth', 'salesman'], 'as' => 'salesman.'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
     Route::get('pos', 'PosController@index')->name('pos');
+    Route::get('drug/create', 'DrugController@create')->name('drugs.create');
 });
 
 Route::group(['prefix' => 'manager', 'namespace' => 'Manager', 'middleware' => ['auth', 'manager'], 'as' => 'manager.'], function () {
