@@ -31,7 +31,6 @@
                 </thead>
                 <tbody>
                     @foreach ($drugs as $drug)
-                    @dump($drug->barcode)
                         <tr>
                             <td>{{ $drug->name }}</td>
                             <td>{{ $drug->generic_name }}</td>

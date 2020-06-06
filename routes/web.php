@@ -41,8 +41,19 @@ Route::group(['prefix' => 'salesman', 'namespace' => 'Salesman', 'middleware' =>
     Route::get('drugs/{id}', 'DrugController@show')->name('drugs.show');
     Route::get('drugs/{id}/edit', 'DrugController@edit')->name('drugs.edit');
     Route::post('drugs/{id}/edit', 'DrugController@update')->name('drugs.update');
-    Route::get('drugs/{id}/delete', 'DrugController@destroy')->name('drugs.destroy');
+    Route::delete('drugs/{id}/delete', 'DrugController@destroy')->name('drugs.destroy');
     Route::get('drugs', 'DrugController@index')->name('drugs.index');
+
+    // Customer
+    Route::get('customers', 'CustomerController@index')->name('customers.index');
+    Route::get('customers/create', 'CustomerController@create')->name('customers.create');
+    Route::post('customers/create', 'CustomerController@store')->name('customers.store');
+    Route::get('customers/regular', 'CustomerController@regular')->name('customers.regular');
+    Route::get('customers/wholesale', 'CustomerController@wholesale')->name('customers.wholesale');
+    Route::get('customers/{id}', 'CustomerController@show')->name('customers.show');
+    Route::get('customers/{id}/edit', 'CustomerController@edit')->name('customers.edit');
+    Route::post('customers/{id}/edit', 'CustomerController@update')->name('customers.update');
+    Route::delete('customers/{id}/delete', 'CustomerController@destroy')->name('customers.destroy');
 });
 
 Route::group(['prefix' => 'manager', 'namespace' => 'Manager', 'middleware' => ['auth', 'manager'], 'as' => 'manager.'], function () {

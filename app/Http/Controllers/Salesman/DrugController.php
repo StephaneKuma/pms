@@ -172,13 +172,13 @@ class DrugController extends Controller
                 Storage::disk('public')->makeDirectory('drugs');
             }
             if(Storage::disk('public')->exists('drugs/'.$drug->image)){
-                Storage::disk('public')->delete('drug/'.$drug->image);
+                Storage::disk('public')->delete('drugs/'.$drug->image);
             }
             $drug_image = Image::make($image)->resize(150, 150)->stream();
             Storage::disk('public')->put('drugs/'.$image_name, $drug_image);
 
             if(!Storage::disk('public')->exists('drug_thumbnails')){
-                Storage::disk('public')->makeDirectory('drugs');
+                Storage::disk('public')->makeDirectory('drug_thumbnails');
             }
             if(Storage::disk('public')->exists('drug_thumbnails/'.$drug->thumb)){
                 Storage::disk('public')->delete('drug_thumbnails/'.$drug->thumb);
