@@ -9,7 +9,7 @@
               <div class="col-md-10">
                 <div class="pos_inputs">
                    <form action="" method="post"  class="SalesForm" id="SalesForm" enctype="multipart/form-data">
-                    <div class="row mb-3">
+                    <div class="row m-b-5">
                       <div class="col-md-3">
                         <input name="customer_type" value="WalkIn" type="radio" id="WalkIn_customer" tabindex="-1" checked="checked">
                         <label for="WalkIn_customer">Walk In Customer</label>
@@ -28,37 +28,30 @@
                       </div>
 
                       <div class="col-md-1">
-                          <a href=#" target="_blank" class="btn btn-sm btn-info waves-effect waves-light" tabindex="-1"><b>Manage Invoice</b></a>
+                          <a href="http://localhost/mad-pharma-master/Invoice/manage_Invoice" target="_blank" class="btn btn-sm btn-info waves-effect waves-light" tabindex="-1"><b>Manage Invoice</b></a>
                       </div>
                     </div>
-                    <div class="row mb-3">
-                      <div class="col-md-3 pr-5">
+                    <div class="row m-b-5">
+                      <div class="col-md-3 p-r-5">
                           <div class="input-group">
-                              <div class="input-group-prepend">
-                                  <span class="input-group-text">
-                                      <i class="fa fa-search" aria-hidden="true"></i>
-                                  </span>
-                              </div>
+                              <span class="input-group-addon b-r-0"><i class="fa fa-search" aria-hidden="true"></i>
+                              </span>
                               <input type="text" class="form-control" name="cusid" id="cusid" placeholder="Barcode , Phone No..." tabindex="1" autocomplete="off" >
+                              <!--<select class="js-customer-data-ajax form-control customer" id="cusid" name="cusid" required  tabindex="1" autocomplete="off">
+                              </select>-->
                           </div>
                       </div>
-                        <div class="col-md-3 pl-5 pr-5 ">
-                            <div class="input-group">
-                                <div class="input-group-prepend" >
-                                    <span class="input-group-text">
-                                        <i class="fa fa-user-circle"></i>
-                                    </span>
-                                </div>
-                                <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="customer name">
-                            </div>
+                      <div class="col-md-3 p-l-r-5">
+                         <div class="input-group" >
+                          <span class="input-group-addon b-r-0">
+                          <i class="fa fa-user-circle"></i></span>
+                          <input type="text" class="form-control" name="customer_name" id="customer_name" placeholder="customer name">
                         </div>
-                      <div class="col-md-3 pl-5">
-                         <div class="input-group">
-                             <div class="input-group-prepend">
-                                 <span class="input-group-text">
-                                    <i class="fa fa-user-o"></i>
-                                </span>
-                             </div>
+                      </div>
+                      <div class="col-md-3 p-l-5">
+                         <div class="input-group" >
+                          <span class="input-group-addon b-r-0">
+                          <i class="fa fa-user-o"></i></span>
                           <input type="text" class="form-control customer_id" name="customer_id" id="customer_id" placeholder="customer ID">
                         </div>
                       </div>

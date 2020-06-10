@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
+use App\Models\Drug;
+use App\Models\Customer;
+use App\Models\Supplier;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
 {
@@ -14,7 +17,14 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        //
+        $links = [];
+        $link = "<li class='breadcrumb-item'><a href=" . route('admin.dashboard') . ">Dashboard</a></li>";
+        $links[] = $link;
+        $title = "Dashboard";
+        $customers = Customer::count();
+        $suppliers = Supplier::count();
+        $drugs = Drug::count();
+        return view('admin.dashboard', compact('title', 'links', 'customers', 'suppliers', 'drugs'));
     }
 
     /**

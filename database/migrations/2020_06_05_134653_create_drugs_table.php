@@ -21,15 +21,15 @@ class CreateDrugsTable extends Migration
                 ->on('suppliers')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->string('name');
-            $table->string('generic_name')->nullable();
-            $table->string('strength')->nullable();
             $table->unsignedBigInteger('drug_form_id');
             $table->foreign('drug_form_id')
                 ->references('id')
                 ->on('drug_forms')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
+            $table->string('name');
+            $table->string('generic_name')->nullable();
+            $table->string('strength')->nullable();
             $table->string('box_size')->nullable();
             $table->string('trade_price')->nullable();
             $table->string('mrp')->nullable();

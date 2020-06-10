@@ -54,6 +54,19 @@ Route::group(['prefix' => 'salesman', 'namespace' => 'Salesman', 'middleware' =>
     Route::get('customers/{id}/edit', 'CustomerController@edit')->name('customers.edit');
     Route::post('customers/{id}/edit', 'CustomerController@update')->name('customers.update');
     Route::delete('customers/{id}/delete', 'CustomerController@destroy')->name('customers.destroy');
+
+    // Supplier
+    Route::get('suppliers', 'SupplierController@index')->name('suppliers.index');
+    Route::get('suppliers/create', 'SupplierController@create')->name('suppliers.create');
+    Route::post('suppliers/create', 'SupplierController@store')->name('suppliers.store');
+    Route::get('suppliers/balance', 'SupplierController@balance')->name('suppliers.balance');
+    Route::get('suppliers/{id}', 'SupplierController@show')->name('suppliers.show');
+    Route::get('suppliers/{id}/edit', 'SupplierController@edit')->name('suppliers.edit');
+    Route::post('suppliers/{id}/edit', 'SupplierController@update')->name('suppliers.update');
+    Route::delete('suppliers/{id}/delete', 'SupplierController@destroy')->name('suppliers.destroy');
+
+    // Report
+    Route::get('reports/today', 'ReportController@today')->name('reports.today');
 });
 
 Route::group(['prefix' => 'manager', 'namespace' => 'Manager', 'middleware' => ['auth', 'manager'], 'as' => 'manager.'], function () {
@@ -62,4 +75,5 @@ Route::group(['prefix' => 'manager', 'namespace' => 'Manager', 'middleware' => [
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => ['auth', 'admin'], 'as' => 'admin.'], function () {
     Route::get('dashboard', 'DashboardController@index')->name('dashboard');
+    Route::get('pos', 'PosController@index')->name('pos');
 });
